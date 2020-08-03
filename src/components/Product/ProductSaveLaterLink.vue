@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <a>Save Design for Later</a>
+    <a class="allday-link" href="#">Save Design for Later</a>
   </aside>
 </template>
 

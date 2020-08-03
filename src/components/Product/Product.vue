@@ -48,12 +48,16 @@ main {
   width: 94vw;
   max-width: var(--max-width);
   justify-content: space-between;
-  margin: 50px auto 0;
+  margin: 50px auto 96px;
   .image-container {
-    max-width: 872px;
+    @media only screen and (min-width: 1260px) {
+      max-width: 872px;
+    }
   }
   .details-container {
-    max-width: 586px;
+    @media only screen and (min-width: 1260px) {
+      max-width: 586px;
+    }
   }
 }
 </style>

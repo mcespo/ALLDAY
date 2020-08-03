@@ -1,19 +1,13 @@
 <template>
-  <img :title="color" :src="image" :alt="description" />
+  <img src="../../assets/product-images/sofa-red.jpg" alt="temp" />
+  <!-- <img :title="color" :src="image" :alt="description" /> -->
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapGetters } from "vuex";
 export default {
   name: "ProductImageSection",
-  // data: () => ({
-  //   fabric: ""
-  // }),
-  computed: mapState({
-    image: state => state.fabric[0].image,
-    description: state => state.fabric[0].description,
-    color: state => state.fabric[0].color
-  })
+  // computed: mapGetters(["thisFabricColor"])
 };
 </script>
 

@@ -4,21 +4,21 @@
       <AlldayLogo class="logo" />
       <ul class="nav-left">
         <li>
-          <a href="#">The Sofa</a>
+          <a class="allday-link" href="#">The Sofa</a>
         </li>
         <li>
-          <a href="#">Reviews</a>
+          <a class="allday-link" href="#">Reviews</a>
         </li>
         <li>
-          <a href="#">About Us</a>
+          <a class="allday-link" href="#">About Us</a>
         </li>
       </ul>
       <ul class="nav-right">
         <li>
-          <a href="#">Showroom</a>
+          <a class="allday-link" href="#">Showroom</a>
         </li>
         <li>
-          <a href="#">Swatches</a>
+          <a  class="allday-link" href="#">Swatches</a>
         </li>
       </ul>
     </nav>

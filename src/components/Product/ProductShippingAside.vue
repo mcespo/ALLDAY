@@ -23,6 +23,7 @@ aside {
       display: inline-block;
       width: 14px;
       height: 19px;
+      margin-right: 8px;
       background: transparent url("/static/icons/lock-icon.svg") no-repeat 50%
         50% / contain;
     }
