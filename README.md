@@ -1,5 +1,7 @@
 # allday
 
+Challenge based on this gist [ALLDAY](https://gist.github.com/tonning/1bd99ec5b8c60bb1a9d52577ac701313)
+
 ## Project setup
 ```
 npm install
@@ -20,5 +22,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
