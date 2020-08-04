@@ -2,7 +2,11 @@
   <main>
     <div class="image-container">
       <ProductShippingAside />
-      <ProductImageSection img="thus" />
+      <ProductImageSection
+        title="somecolor"
+        src="../../assets/product-images/sofa-red.jpg"
+        alt="someimage"
+      />
       <ProductFeaturesAside />
     </div>
     <div class="details-container">
@@ -11,6 +15,15 @@
       <ProductAddToCartButton />
       <ProductSaveLaterLink />
       <ProductAlternativesSection />
+      <div class="selection">
+        <ProductSwatchBox
+          v-for="fabric in allFabrics"
+          v-bind:key="fabric.id"
+          v-bind:thumb="fabric.thumb"
+          v-bind:color="fabric.color"
+          v-bind:alt="fabric.description"
+        />
+      </div>
     </div>
   </main>
 </template>
@@ -24,9 +37,13 @@ import ProductPriceSection from "./ProductPriceSection";
 import ProductAddToCartButton from "./ProductAddToCartButton";
 import ProductSaveLaterLink from "./ProductSaveLaterLink";
 import ProductAlternativesSection from "./ProductAlternativesSection";
+import ProductSwatchBox from "./ProductSwatchBox";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "Product",
+  computed: mapGetters(["allFabrics"]),
   components: {
     ProductShippingAside,
     ProductImageSection,
@@ -35,7 +52,8 @@ export default {
     ProductPriceSection,
     ProductAddToCartButton,
     ProductSaveLaterLink,
-    ProductAlternativesSection
+    ProductAlternativesSection,
+    ProductSwatchBox
   }
 };
 </script>
@@ -72,6 +90,11 @@ main {
     }
     @include for-size(largest-up) {
       max-width: 586px;
+    }
+    .selection {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1em;
     }
   }
 }

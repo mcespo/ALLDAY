@@ -1,24 +1,26 @@
 <template>
   <div>
-    <img src="../../assets/product-images/sofa-red.jpg" alt="temp" />
+    <!-- <img src="../../assets/product-images/sofa-red.jpg" alt="temp" /> -->
+    <img :title="title" :src="src" :alt="alt" />
   </div>
-  <!-- <img :title="color" :src="image" :alt="description" /> -->
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
 export default {
   name: "ProductImageSection",
   props: {
-    name: {
+    title: {
       type: String,
       default: "Red"
     },
-    img: {
+    src: {
       type: String
+    },
+    alt: {
+      type: String,
+      required: true
     }
   }
-  // computed: mapGetters(["thisFabricColor"])
 };
 </script>
 

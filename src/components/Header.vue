@@ -1,9 +1,7 @@
 <template>
   <header class="header">
-    <nav>
-      <AlldayLogo class="logo" />
-      <Nav />
-    </nav>
+    <AlldayLogo class="logo" />
+    <Nav />
   </header>
 </template>
 
@@ -22,11 +20,29 @@ export default {
 
 <style scoped lang="scss">
 .header {
+  z-index: 2;
   position: sticky;
   top: 0;
-  z-index: 1;
   background-color: var(--lightgray-200);
-  margin: 0 auto;
-  height: 100px;
+  min-width: 100vw;
+  display: grid;
+  justify-content: center;
+  min-height: 80px;
+  @include for-size(large-up) {
+  }
+  .logo {
+    width: 326px;
+    height: 51px;
+    grid-area: logo;
+    justify-self: center;
+    transform: scale(0.75);
+    @include for-size(large-up) {
+      grid-area: logo;
+      transform: scale(1);
+    }
+  }
+  nav {
+    grid-area: navigatiom;
+  }
 }
 </style>
