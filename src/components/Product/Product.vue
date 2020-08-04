@@ -2,7 +2,7 @@
   <main>
     <div class="image-container">
       <ProductShippingAside />
-      <ProductImageSection />
+      <ProductImageSection img="thus" />
       <ProductFeaturesAside />
     </div>
     <div class="details-container">
@@ -43,19 +43,34 @@ export default {
 <style scoped lang="scss">
 main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 40px;
-  width: 94vw;
   max-width: var(--max-width);
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 50px auto 96px;
+  width: 90vw;
+  @include for-size(small-up) {
+    width: 80vw;
+  }
+  @include for-size(medium-up) {
+    width: 60vw;
+  }
+  @include for-size(large-up) {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 40px;
+    width: 94vw;
+  }
   .image-container {
-    @media only screen and (min-width: 1260px) {
+    @include for-size(largest-up) {
       max-width: 872px;
     }
   }
   .details-container {
-    @media only screen and (min-width: 1260px) {
+    border-top: 2px solid var(--white-100);
+    padding-top: 30px;
+    @include for-size(large-up) {
+      border-top: none;
+      padding-top: 0;
+    }
+    @include for-size(largest-up) {
       max-width: 586px;
     }
   }

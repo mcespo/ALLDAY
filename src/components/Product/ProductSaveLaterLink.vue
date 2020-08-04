@@ -1,12 +1,16 @@
 <template>
   <aside>
-    <a class="allday-link" href="#">Save Design for Later</a>
+    <Link text="Save Design for Later" />
   </aside>
 </template>
 
 <script>
+import Link from "../Link";
 export default {
-  name: "ProductSaveLaterLink"
+  name: "ProductSaveLaterLink",
+  components: {
+    Link
+  }
 };
 </script>
 
@@ -15,9 +19,12 @@ aside {
   width: 100%;
   height: 40px;
   position: relative;
-  margin: 0 auto 50px;
   cursor: pointer;
   width: fit-content;
+  margin: 20px auto 50px;
+  @include for-size(large-up) {
+    margin-top: 0;
+  }
   a::after {
     top: 74%;
   }

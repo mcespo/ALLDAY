@@ -1,5 +1,7 @@
 <template>
-  <img src="../../assets/product-images/sofa-red.jpg" alt="temp" />
+  <div>
+    <img src="../../assets/product-images/sofa-red.jpg" alt="temp" />
+  </div>
   <!-- <img :title="color" :src="image" :alt="description" /> -->
 </template>
 
@@ -7,6 +9,15 @@
 // import { mapGetters } from "vuex";
 export default {
   name: "ProductImageSection",
+  props: {
+    name: {
+      type: String,
+      default: "Red"
+    },
+    img: {
+      type: String
+    }
+  }
   // computed: mapGetters(["thisFabricColor"])
 };
 </script>

@@ -1,0 +1,23 @@
+@mixin for-size($size) {
+  @if $size == small-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == small-up {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == medium-up {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == large-up {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $size == largest-up {
+    @media (min-width: 1264px) {
+      @content;
+    }
+  }
+};

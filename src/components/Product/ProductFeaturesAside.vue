@@ -25,7 +25,7 @@ export default {
     MadeInAmerica,
     TenYearWarranty,
     SuperEasyAssembly,
-    HighQualityMaterials,
+    HighQualityMaterials
   }
 };
 </script>
@@ -35,5 +35,7 @@ aside {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 </style>
