@@ -40,7 +40,7 @@ export default {
   border: 3px solid var(--blue-200);
   border-radius: 6px;
   &:hover {
-    border-color: pink;
+    /* border-color: pink; */
   }
   .image-container {
     display: grid;

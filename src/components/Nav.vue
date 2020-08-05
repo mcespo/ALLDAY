@@ -1,10 +1,7 @@
 <template>
   <nav class="menu">
-    <input type="checkbox" id="toggle" class="nav-button visually-hidden" />
-    <!-- <div class="nav-button">
-      <label class="label" for="toggle">Toggle</label>
-      <input type="checkbox" id="toggle" class="visually-hidden" />
-    </div> -->
+    <input class="visually-hidden" type="checkbox" id="toggle" />
+    <label class="nav-button" for="toggle"></label>
     <div class="nav-list">
       <ul class="nav-left">
         <li>
@@ -41,6 +38,7 @@ export default {
 
 <style lang="scss">
 .menu {
+  position: relative;
   min-width: 90vw;
   margin: 0 auto;
   display: grid;
@@ -53,31 +51,45 @@ export default {
     /* display: grid;
     grid-area: navmenu; */
   }
-
+  .visually-hidden {
+    position: absolute;
+    opacity: 0;
+  }
   .nav-button {
+    font-family: "Bungee", cursive;
+    padding: 6px;
+    cursor: pointer;
     grid-area: navbutton;
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    min-width: 60px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: var(--blue-200);
+    color: var(--white-100);
+    margin: 25px 0;
+    transform: translateX(-5.5vw);
+    &::after {
+      margin: 0 auto;
+      content: "Menu";
+    }
     @include for-size(large-up) {
       display: none;
     }
-    .label {
-      position: absolute;
-    }
-    .visually-hidden {
-      position: absolute;
-      opacity: 0;
+  }
+  .visually-hidden[type="checkbox"]:checked + .nav-button{
+    &::after {
+      content: "Close";
     }
   }
-  .nav-button[type="checkbox"]:not(:checked) ~ .nav-list {
+  .visually-hidden[type="checkbox"]:not(:checked) ~ .nav-list {
     display: none;
     @include for-size(large-up) {
       display: grid;
     }
   }
-  .nav-button[type="checkbox"]:checked ~ .nav-list {
+  .visually-hidden[type="checkbox"]:checked ~ .nav-list {
     display: flex;
   }
   .nav-list {
@@ -87,7 +99,7 @@ export default {
     @include for-size(large-up) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas:"navleft . navright";
+      grid-template-areas: "navleft . navright";
     }
     .nav-left,
     .nav-right {

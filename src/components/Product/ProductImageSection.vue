@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <img src="../../assets/product-images/sofa-red.jpg" alt="temp" /> -->
     <img :title="title" :src="src" :alt="alt" />
   </div>
 </template>

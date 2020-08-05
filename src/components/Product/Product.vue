@@ -79,13 +79,15 @@ export default {
           image: require("@/assets/product-images/sofa-red.jpg")
         }
       ],
-      currentSwatch: [{
-        id: 123456,
-        color: "Amber",
-        description: "Amber colored ALLDAY couch",
-        thumb: require("@/assets/product-images/sofa-amber-fabric-thumb.jpg"),
-        image: require("@/assets/product-images/sofa-amber.jpg")
-      }]
+      currentSwatch: [
+        {
+          id: 123456,
+          color: "Amber",
+          description: "Amber colored ALLDAY couch",
+          thumb: require("@/assets/product-images/sofa-amber-fabric-thumb.jpg"),
+          image: require("@/assets/product-images/sofa-amber.jpg")
+        }
+      ]
     };
   },
   methods: {

@@ -31,12 +31,14 @@ export default {
   @include for-size(large-up) {
   }
   .logo {
+    margin: 15px 0;
     width: 326px;
     height: 51px;
     grid-area: logo;
     justify-self: center;
-    transform: scale(0.75);
+    transform: scale(0.70);
     @include for-size(large-up) {
+      margin: 0;
       grid-area: logo;
       transform: scale(1);
     }
