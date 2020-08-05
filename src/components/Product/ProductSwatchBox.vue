@@ -1,10 +1,15 @@
 <template>
-  <div :key="text" class="item-container">
-    <aside class="image-container">
-      <img :src="thumb" :alt="text" />
+  <div
+    @click.stop="$emit('thisSelection')"
+    :id="id"
+    :key="id"
+    class="item-container"
+  >
+    <aside :id="id" class="image-container">
+      <img :id="id" :src="thumb" :alt="description" />
     </aside>
-    <aside class="image-title">
-      <p>{{ color }}</p>
+    <aside :id="id" class="image-title">
+      <p :id="id">{{ color }}</p>
     </aside>
   </div>
 </template>
@@ -13,13 +18,16 @@
 export default {
   name: "ProductSwatchBox",
   props: {
-    text: {
-      type: String
+    id: {
+      type: Number
     },
     color: {
       type: String
     },
     thumb: {
+      type: String
+    },
+    description: {
       type: String
     }
   }

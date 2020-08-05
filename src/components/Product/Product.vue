@@ -3,9 +3,9 @@
     <div class="image-container">
       <ProductShippingAside />
       <ProductImageSection
-        title="somecolor"
-        src="../../assets/product-images/sofa-red.jpg"
-        alt="someimage"
+        :title="currentSwatch[0].color"
+        :src="currentSwatch[0].image"
+        :alt="currentSwatch[0].description"
       />
       <ProductFeaturesAside />
     </div>
@@ -17,11 +17,13 @@
       <ProductAlternativesSection />
       <div class="selection">
         <ProductSwatchBox
-          v-for="fabric in allFabrics"
-          v-bind:key="fabric.id"
-          v-bind:thumb="fabric.thumb"
-          v-bind:color="fabric.color"
-          v-bind:alt="fabric.description"
+          @thisSelection="matchId(getSwatchId())"
+          v-for="swatch in swatches"
+          :id="swatch.id"
+          :key="swatch.id"
+          :thumb="swatch.thumb"
+          :color="swatch.color"
+          :description="swatch.description"
         />
       </div>
     </div>
@@ -39,11 +41,8 @@ import ProductSaveLaterLink from "./ProductSaveLaterLink";
 import ProductAlternativesSection from "./ProductAlternativesSection";
 import ProductSwatchBox from "./ProductSwatchBox";
 
-import { mapGetters } from "vuex";
-
 export default {
   name: "Product",
-  computed: mapGetters(["allFabrics"]),
   components: {
     ProductShippingAside,
     ProductImageSection,
@@ -54,6 +53,48 @@ export default {
     ProductSaveLaterLink,
     ProductAlternativesSection,
     ProductSwatchBox
+  },
+  data: function() {
+    return {
+      swatches: [
+        {
+          id: 123456,
+          color: "Amber",
+          description: "Amber colored ALLDAY couch",
+          thumb: require("@/assets/product-images/sofa-amber-fabric-thumb.jpg"),
+          image: require("@/assets/product-images/sofa-amber.jpg")
+        },
+        {
+          id: 789012,
+          color: "Charcoal",
+          description: "Charcoal colored ALLDAY couch",
+          thumb: require("@/assets/product-images/sofa-charcoal-fabric-thumb.jpg"),
+          image: require("@/assets/product-images/sofa-charcoal.jpg")
+        },
+        {
+          id: 345678,
+          color: "Red",
+          description: "Red colored ALLDAY couch",
+          thumb: require("@/assets/product-images/sofa-red-fabric-thumb.jpg"),
+          image: require("@/assets/product-images/sofa-red.jpg")
+        }
+      ],
+      currentSwatch: [{
+        id: 123456,
+        color: "Amber",
+        description: "Amber colored ALLDAY couch",
+        thumb: require("@/assets/product-images/sofa-amber-fabric-thumb.jpg"),
+        image: require("@/assets/product-images/sofa-amber.jpg")
+      }]
+    };
+  },
+  methods: {
+    getSwatchId: function() {
+      return Number(event.target.id);
+    },
+    matchId: function(id) {
+      this.currentSwatch = this.swatches.filter(swatch => swatch.id === id);
+    }
   }
 };
 </script>
