@@ -47,6 +47,7 @@ export default {
     height: 120px;
     border-radius: 6px 6px 0 0;
     border: 3px solid transparent;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     img {
       z-index: 1;
       width: 100%;
@@ -62,6 +63,7 @@ export default {
     color: var(--gray-100);
     background-color: var(--lightgray-100);
     border: 3px solid var(--lightgray-100);
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   &.active {
     cursor: default;
@@ -75,6 +77,9 @@ export default {
     }
   }
   &:hover {
+    .image-container {
+      border-color: var(--blue-100);
+    }
     .image-title {
       color: var(--white-100);
       background-color: var(--blue-100);
