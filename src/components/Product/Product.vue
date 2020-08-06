@@ -87,12 +87,13 @@ export default {
           thumb: require("@/assets/product-images/sofa-amber-fabric-thumb.jpg"),
           image: require("@/assets/product-images/sofa-amber.jpg")
         }
-      ]
+      ],
+      activeIndex: 0
     };
   },
   methods: {
     getSwatchId: function() {
-      return Number(event.target.id);
+      return Number(event.srcElement.parentNode.parentNode.id);
     },
     matchId: function(id) {
       this.currentSwatch = this.swatches.filter(swatch => swatch.id === id);

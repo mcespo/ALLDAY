@@ -33,9 +33,12 @@ export default {
 <style scoped lang="scss">
 aside {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 50px;
+  svg {
+    padding: 8px;
+  }
 }
 </style>

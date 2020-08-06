@@ -17,8 +17,10 @@ export default {
 <style scoped lang="scss">
 article {
   h1 {
+    line-height: 1;
     font-size: 40px;
     color: var(--blue-100);
+    padding-bottom: 8px;
   }
 }
 </style>
